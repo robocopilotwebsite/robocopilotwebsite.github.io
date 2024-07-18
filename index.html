@@ -1,19 +1,222 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
-        }
-    </style>
+    <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8D3BBNGXC9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-8D3BBNGXC9');
+  </script>
+
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .video-carousel {
+      width: 90%; /* Adjust as needed */
+      height: 200px; /* Adjust as needed */
+      overflow: hidden;
+      white-space: nowrap;
+      position: relative;
+      margin-left: 5%; /* Add space on the left side */
+      font-size: 0;
+  }
+
+    .video-slide {
+      width: 300px; /* 1/5 of the container */
+      height: 100%;
+      margin: 0;
+      padding: 0;
+
+  }
+
+  @keyframes slide {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+
+
+
+
+  </style>
+  <link rel="icon" type="image/png" href="./static/images/seal_icon.png">
+  <title>RoboCopilot</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
 </head>
 <body>
-    <h1>Hello World</h1>
-    <p>Welcome to my simple HTML website!</p>
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">RoboCopilot: Human-in-the-loop Interactive Imitation Learning for Robot Manipulation</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              Anonymous
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- </div> -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="column">
+      <img src="./static/images/teaser.png" alt="teaser" class="teaser-image">
+
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light">
+  <br>
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column" style="padding: 0 40px;">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>Learning from human demonstration is an effective approach for learning complex manipulation skills. However, existing approaches heavily focus on learning from passive human demonstration data for its simplicity in data collection. Interactive human teaching has appealing theoretical and practical properties, but are not well supported by the existing human-robot interfaces. This paper proposes a novel system that enables seamless control switching between human and an autonomous policy for bi-manual manipulation tasks, enabling more efficnet learning of new tasks. This is achieved through a compliant, fully featured, bilateral teleportation system. Through simulation and hardware experiments, we demonstrate the value of our system in an interactive human teaching for learning complex bi-manual manipulation skills.
+          </p><br>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- insert youtube link here -->
+<section class="hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <div class="content">
+          <iframe width="800" height="480" src="video.mp4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section has-text-justified">
+  <div class="container is-max-desktop">
+    <!--/ Method. -->
+    <div class="columns is-centered">
+      <div class="column">
+        <h2 class="title is-3">RoboCopilot</h2>
+      </div>
+    </div>
+    <div class="columns is-centered has-text-justified">
+      <div class="column">
+        <img src="./static/images/method.png" alt="teaser" class="teaser-image">
+        <figcaption>Overview for our interactive teaching system. (a) Workflow for learning a single skill:  We start with a set of human demonstrations to pre-train the initial policy. Then in the interactive teaching stage, the policy is deployed and human intervenes upon policy failure. The policy is continually fine-tuned from these new demos. (b) During robot execution, the robot policy takes sensor observations and outputs actions. The human can interrupt on policy failure and correct the mistake, storing the data into the dataset. The model is continually training and being updated.</figcaption>
+      </div>
+    </div>
+
+
+    <div class="columns is-multiline">
+      <div class="column is-4">
+        <br>
+        <p>
+          We aim to develop a versatile mobile bi-manual robot with a capable teleoperation system for human-in-the-loop interactive teaching for a wide range of real world tasks. 
+Our physical RoboCopilot system consists of three componenets: the robot, the teleoperation device, and the human-robot interface. The robot acts as the physical agent interacting with the environment and the teleoperation device enables a human operator to collect demonstration and interact with the robot during deployment. Lastly the human-robot interface integrates these two hardware elements into a cohesive learning system.
+        </p>
+        <br>
+      </div>
+
+    <div class="column is-8">
+      <figure>
+        <img src="./static/images/gripper.png" alt="env" class="env-image">
+        <figcaption>The comparison of the different end-effector human interface designs for different teleoperation
+systems is shown below: Left: Aloha and GELLO’s handheld interface. Middle: RoboCopilot layout,
+where we attached the Quest2 controller at the end of our GELLO device. Right: The key map of our end-
+effector human input interface. We optimized the layout to allow efficient gripper control and interactive
+human-in-the-loop teaching.</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="columns is-centered">
+    <div class="column">
+      <h2 class="title is-5">Experiments</h2>
+      <p>
+        We test our RoboCopilot system in the real world on an industrial part picking task. The goal of the robot in this task is to pick up industrial aluminum extrusions and place them into a bin. We use two different sized aluminum extrusions, a small one which can be picked up with a single arm, a longer beam should be picked up by both arms. To control the experiment we define a domain of interest where the 8020 beams are placed. Additionally, for the placing bin, we mark 3 train locations, as well as 2 test locations. During testing of a policy, we choose and evaluate the robot of 18 predetermined locations. This task allows us to study various components of our system. First, the setting is very multimodal, as there may be different strategies and methods of how to pick up the object. Second we can test the effectiveness compliance of our system as holding the long beam with both hands is more straightforward for a compliant system. 
+      </p>
+    </div>
+  </div>
+  <!-- add text here -->
+
+  <div class="columns is-centered has-text-justified">
+    <div class="column">
+      <img src="./static/images/task_description.png" alt="teaser" class="teaser-image">
+      <figcaption>An illustration of the evaluation protocol for the industrial part transport tasks. During training, the robot the beam is placed in different positions within a defined boundary (highlighted in green). Industrial picking requires the robot to locate and manipulate the long beam or short beam and place it within the bin. Mobile industrial picking only considers the long beam, but the bin is further away, requiring the robot to drive the base before placing. We label the poses of the beams and the bin to ensure consistency during evaluation.</figcaption>
+    </div>
+  </div>
+
+  <div class="columns is-centered">
+    <div class="column">
+      <h2 class="title is-5">Results</h2>
+    </div>
+  </div>
+  <!-- add text here -->
+
+  <div class="columns is-centered has-text-justified">
+    <div class="column">
+      <img src="./static/images/results.png" alt="teaser" class="teaser-image">
+      <figcaption>Task completion rate of the industrial picking experiment we ran in the real environment. From this table, we can see that under the human-in-the-loop interactive learning setting, the policy can achieve higher performance given the same amount of human-labeled trajectories. With the human-in-the-loop copilot data collection process, the learned policy achieves a much higher success rate given the same number of training trajectories. Additionally, since the human operator can allow the policy to take over again once a mistake is corrected, the number of human-teleoperated timesteps in these DAggered trajectories is significantly less compared to those in offline BC data.</figcaption>
+    </div>
+  </div>
+
+</section>
+
+<footer class="custom_footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            Template borrowed from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+          </p><br>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>
